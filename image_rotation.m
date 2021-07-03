@@ -1,13 +1,11 @@
-function image_rotation(image_name,image_path,about_y,angle)
+function image_rotation(image_name,image_path,angle)
 
 path = image_path + '\' + image_name ;
 img = imread(path);
 
-if(about_y)
-    rot_mat = [cosd(angle) -sind(angle); sind(angle) cosd(angle)];
-else
-    rot_mat = rotx(angle);
-end
+
+rot_mat = [cosd(angle) -sind(angle); sind(angle) cosd(angle)];
+
 image_height = size(img,1);
 image_width = size(img,2);
 
